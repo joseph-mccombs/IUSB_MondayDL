@@ -1,11 +1,10 @@
 import pydicom as dicom
 import os
 
-data_path = '../ddsm/ClassicalPathFormat/CBID-DDSM/'
+data_path = '../ddsm/ClassicalPathFormat/CBIs-DDSM/'
 
 for curdir, dirs, files in os.walk(data_path):
     for f in files:
-        print(f)
         if not f.endswith('.dcm'):
             continue
 
