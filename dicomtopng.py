@@ -10,5 +10,6 @@ for curdir, dirs, files in os.walk(data_path):
 
         file_path = os.path.join(curdir,f)
         data = dicom.read_file(file_path)
+        print(file_path)
         print(data)
         exit()
