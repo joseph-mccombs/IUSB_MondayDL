@@ -1,4 +1,4 @@
-import dicom
+import pydicom as dicom
 import os
 
 data_path = '../ddsm/ClassicalPathFormat/CBID-DDSM/'
