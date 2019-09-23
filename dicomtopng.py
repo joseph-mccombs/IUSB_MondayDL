@@ -5,6 +5,7 @@ data_path = '../ddsm/ClassicalPathFormat/CBID-DDSM/'
 
 for curdir, dirs, files in os.walk(data_path):
     for f in files:
+        print(f)
         if not f.endswith('.dcm'):
             continue
 
