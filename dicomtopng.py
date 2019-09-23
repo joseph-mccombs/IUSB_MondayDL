@@ -1,7 +1,7 @@
 import pydicom as dicom
 import os
 
-data_path = '../ddsm/ClassicalPathFormat/CBIs-DDSM/'
+data_path = '../ddsm/ClassicalPathFormat/CBIS-DDSM/'
 
 for curdir, dirs, files in os.walk(data_path):
     for f in files:
