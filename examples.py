@@ -1,5 +1,6 @@
 import pydicom as dicom
 import pandas
+import os
 
 # Data Location
 data_dir = '/deepData/DataSetXfer/DataSets/tcia-ddsm-all/ClassicalPathFormat/CBIS-DDSM/'
@@ -14,4 +15,5 @@ train_csv_data = pandas.read_csv(train_csv)
 data = train_csv_data[['cropped_image_path', 'pathology']].to_dict(orient='list')
 
 for file, pathology in zip(data['cropped_image_path'], data['pathology']):
-    print(file, pathology)
+    fp = os.path.join(data_dir, file)
+    print(fp)
