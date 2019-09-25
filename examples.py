@@ -20,7 +20,7 @@ train_csv_data = pandas.read_csv(train_csv)
 data = train_csv_data[['cropped_image_path', 'pathology']]
 print(data)
 
-print(data[0])
+print(data['cropped_image_path'].to_list()[0])
 
 # counter = 0
 # for file, pathology in zip(data['cropped_image_path'], data['pathology']):
