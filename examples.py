@@ -23,5 +23,12 @@ for file, pathology in zip(data['cropped_image_path'], data['pathology']):
     fp = os.path.join(data_dir, file)
     pixel_data = dicom.read_file(fp).pixel_array
     pixel_data = Image.fromarray(pixel_data)
+    ben_mag = ''
+    if 'benign' in pathology.lower():
+        ben_mag = 'benign'
+    elif 'malignant' in pathology.lower():
+        ben_mag = 'malignant'
+    else:
+        print(pathology)
     out = outpath + pathology.lower() + '/{}.png'.format(counter)
     pixel_data.save(out)
