@@ -10,5 +10,5 @@ test_csv = '/deepData/DataSetXfer/DataSets/tcia-ddsm-all/ClassicalPathFormat/mas
 
 
 train_csv_data = pandas.read_csv(train_csv)
-
-print(train_csv_data[['cropped_image_path', 'pathology']].to_dict(orient='list'))
+# Check out pandas docs on to_dict function - https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_dict.html
+print(train_csv_data[['cropped_image_path', 'pathology']].to_dict(orient='records'))
