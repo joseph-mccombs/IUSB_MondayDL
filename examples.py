@@ -11,4 +11,4 @@ test_csv = '/deepData/DataSetXfer/DataSets/tcia-ddsm-all/ClassicalPathFormat/mas
 
 train_csv_data = pandas.read_csv(train_csv)
 
-print(train_csv_data)
+print(train_csv_data['cropped_image_path'])
