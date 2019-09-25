@@ -10,14 +10,17 @@ data_dir = '/deepData/DataSetXfer/DataSets/tcia-ddsm-all/ClassicalPathFormat/CBI
 train_csv = '/deepData/DataSetXfer/DataSets/tcia-ddsm-all/ClassicalPathFormat/mass_case_description_train_set.csv'
 test_csv = '/deepData/DataSetXfer/DataSets/tcia-ddsm-all/ClassicalPathFormat/mass_case_description_test_set.csv'
 
-# output location
+# set an output location
 outpath = '../data/train/'
 
+# Load csv data with pandas
 train_csv_data = pandas.read_csv(train_csv)
+
 # Check out pandas docs on to_dict function - https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_dict.html
 data = train_csv_data[['cropped_image_path', 'pathology']]
-
 print(data)
+
+print(data[0])
 
 # counter = 0
 # for file, pathology in zip(data['cropped_image_path'], data['pathology']):
