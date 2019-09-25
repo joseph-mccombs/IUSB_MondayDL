@@ -22,5 +22,5 @@ for file, pathology in zip(data['cropped_image_path'], data['pathology']):
     fp = os.path.join(data_dir, file)
     pixel_data = dicom.read_file(fp).pixel_array
     pixel_data = Image.fromarray(pixel_data)
-    outpath += pathology.lower() + '/{}.png'.format(counter)
-    pixel_data.save(outpath)
+    out = outpath + pathology.lower() + '/{}.png'.format(counter)
+    pixel_data.save(out)
