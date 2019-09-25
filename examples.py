@@ -16,7 +16,7 @@ outpath = '../data/train/'
 # Load csv data with pandas
 train_csv_data = pandas.read_csv(train_csv)
 
-
+# There are many ways to work with CSV data, pandas has a ton of useful built in functions
 data = train_csv_data[['cropped_image_path', 'pathology']]
 print(data)
 
@@ -25,24 +25,14 @@ print(data)
 image_path = data['cropped_image_path'].to_list()[0]
 fp = os.path.join(data_dir, image_path)
 
+# Read in the file using pydicom
 dcm = dicom.read_file(fp)
+
+# get the pixel_array data from the dicom file
 pixel_data = dcm.pixel_array
+
+# convert pixel_array data to image data
 im = Image.fromarray(pixel_data)
+
+# save image as png
 im.save('tmp.png')
-
-
-# counter = 0
-# for file, pathology in zip(data['cropped_image_path'], data['pathology']):
-#     fp = os.path.join(data_dir, file)
-#     pixel_data = dicom.read_file(fp).pixel_array
-#     pixel_data = Image.fromarray(pixel_data)
-#     ben_mag = ''
-#     if 'benign' in pathology.lower():
-#         ben_mag = 'benign'
-#     elif 'malignant' in pathology.lower():
-#         ben_mag = 'malignant'
-#     else:
-#         print(pathology)
-#     out = outpath + ben_mag + '/{}.png'.format(counter)
-#     pixel_data.save(out)
-#     counter += 1
