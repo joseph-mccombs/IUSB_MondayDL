@@ -30,5 +30,5 @@ for file, pathology in zip(data['cropped_image_path'], data['pathology']):
         ben_mag = 'malignant'
     else:
         print(pathology)
-    out = outpath + pathology.lower() + '/{}.png'.format(counter)
+    out = outpath + ben_mag + '/{}.png'.format(counter)
     pixel_data.save(out)
