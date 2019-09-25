@@ -13,7 +13,5 @@ train_csv_data = pandas.read_csv(train_csv)
 # Check out pandas docs on to_dict function - https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_dict.html
 data = train_csv_data[['cropped_image_path', 'pathology']].to_dict(orient='list')
 
-print(data)
-exit()
-for file, pathology in zip(data):
+for file, pathology in zip(data['cropped_image_path'], data['pathology']):
     print(file, pathology)
