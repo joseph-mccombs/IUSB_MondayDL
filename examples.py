@@ -19,6 +19,7 @@ data = train_csv_data[['cropped_image_path', 'pathology']].to_dict(orient='list'
 counter = 0
 
 for file, pathology in zip(data['cropped_image_path'], data['pathology']):
+    print(pathology)
     fp = os.path.join(data_dir, file)
     pixel_data = dicom.read_file(fp).pixel_array
     pixel_data = Image.fromarray(pixel_data)
