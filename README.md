@@ -28,8 +28,9 @@
     
 
 
-3. Prepare DICOM breast cancer lesion data set
-    * Read about the data set here https://wiki.cancerimagingarchive.net/display/Public/CBIS-DDSM
+3. Read about DICOM and our data set
+    * DICOM - https://en.wikipedia.org/wiki/DICOM
+    * Breast cancer data set - https://wiki.cancerimagingarchive.net/display/Public/CBIS-DDSM
     * This data set is already downloaded on the linux machines so you DO NOT need to download it yourself
     
     
