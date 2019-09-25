@@ -15,20 +15,22 @@ outpath = '../data/train/'
 
 train_csv_data = pandas.read_csv(train_csv)
 # Check out pandas docs on to_dict function - https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_dict.html
-data = train_csv_data[['cropped_image_path', 'pathology']].to_dict(orient='list')
-counter = 0
+data = train_csv_data[['cropped_image_path', 'pathology']]
 
-for file, pathology in zip(data['cropped_image_path'], data['pathology']):
-    fp = os.path.join(data_dir, file)
-    pixel_data = dicom.read_file(fp).pixel_array
-    pixel_data = Image.fromarray(pixel_data)
-    ben_mag = ''
-    if 'benign' in pathology.lower():
-        ben_mag = 'benign'
-    elif 'malignant' in pathology.lower():
-        ben_mag = 'malignant'
-    else:
-        print(pathology)
-    out = outpath + ben_mag + '/{}.png'.format(counter)
-    pixel_data.save(out)
-    counter += 1
+print(data)
+
+# counter = 0
+# for file, pathology in zip(data['cropped_image_path'], data['pathology']):
+#     fp = os.path.join(data_dir, file)
+#     pixel_data = dicom.read_file(fp).pixel_array
+#     pixel_data = Image.fromarray(pixel_data)
+#     ben_mag = ''
+#     if 'benign' in pathology.lower():
+#         ben_mag = 'benign'
+#     elif 'malignant' in pathology.lower():
+#         ben_mag = 'malignant'
+#     else:
+#         print(pathology)
+#     out = outpath + ben_mag + '/{}.png'.format(counter)
+#     pixel_data.save(out)
+#     counter += 1
